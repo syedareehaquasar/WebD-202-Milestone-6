@@ -21,6 +21,8 @@ def process_priorities(priority: int, user):
         if i.priority == concerned_priority:
             i.priority += 1
             concerned_priority += 1
+        else:
+            break
 
     Task.objects.bulk_update(affected_queries, ["priority"])
 
